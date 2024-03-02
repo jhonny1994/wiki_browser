@@ -1,5 +1,5 @@
 name: wiki_browser
-description: "A new Flutter project."
+description: "A browser for wikipedia."
 publish_to: 'none'
 version: 0.1.0
 
