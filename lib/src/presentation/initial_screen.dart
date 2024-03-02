@@ -9,8 +9,10 @@ class InitialScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final searchTerm = TextEditingController();
 
-    return SizedBox(
-      width: 500,
+    return Container(
+      constraints: BoxConstraints.loose(
+        const Size(500, double.infinity),
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

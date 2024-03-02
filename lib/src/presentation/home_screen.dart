@@ -34,11 +34,14 @@ class HomeScreen extends ConsumerWidget {
         ),
       ),
       body: Center(
-        child: browser.when(
-          failure: (error) => Text(error),
-          loading: () => const CircularProgressIndicator(),
-          success: (article) => ArticleScreen(article),
-          initial: () => const InitialScreen(),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: browser.when(
+            failure: (error) => Text(error),
+            loading: () => const CircularProgressIndicator(),
+            success: (article) => ArticleScreen(article),
+            initial: () => const InitialScreen(),
+          ),
         ),
       ),
     );

@@ -10,29 +10,26 @@ class ArticleScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(article.extract),
-          const SizedBox(height: 16),
-          if (article.thumbnail != null)
-            Expanded(
-              child: CachedNetworkImage(
-                imageUrl: article.thumbnail!,
-                fit: BoxFit.contain,
-              ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(article.extract),
+        const SizedBox(height: 16),
+        if (article.thumbnail != null)
+          Expanded(
+            child: CachedNetworkImage(
+              imageUrl: article.thumbnail!,
+              fit: BoxFit.contain,
             ),
-          const SizedBox(height: 16),
-          TextButton(
-            onPressed: () => launchUrlString(article.url),
-            child: const Text('source'),
           ),
-          const SizedBox(height: 16),
-        ],
-      ),
+        const SizedBox(height: 16),
+        TextButton(
+          onPressed: () => launchUrlString(article.url),
+          child: const Text('source'),
+        ),
+        const SizedBox(height: 16),
+      ],
     );
   }
 }
